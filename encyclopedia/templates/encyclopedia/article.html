@@ -1,0 +1,15 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+{{ heading }}
+{% endblock %}
+
+{% block body %}
+{% if article %}
+    <a href="{% url 'edit' heading %}">Edit</a>
+    <br>
+    {{ article|safe }}
+{% else %}
+    404
+{% endif %}
+{% endblock %}
